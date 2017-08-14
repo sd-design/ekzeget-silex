@@ -1,0 +1,132 @@
+.pdocrud-table-container .page-title{
+    background: #000;
+    color: #fff;
+}
+.pdocrud-table-container .pdocrud-table-heading h3 {
+    float: left;
+    font-size: 20px;
+    margin: 0;
+}
+.pdocrud-table-container a {
+    color: #000;
+}
+.pdocrud-button-add{
+    color: #fff !important;
+}
+.pdocrud-table th{
+    background: #9e0000;
+    color: #fff;
+}
+.pdocrud-table tr:nth-child(odd){
+    background:#2a3542 !important;
+    color: #fff;
+}
+.pdocrud-table tr:nth-child(even){
+    background:#000 !important;
+    color: #fff;
+}
+.pdocrud-table tr:hover{
+    background: #424242 !important;
+    color: #fff;
+}
+
+.pdocrud-table i{
+    color: #fff;
+}
+.pdocrud-export-options ul li a{
+    background: #9e0000;
+    color: #fff;
+}
+.pdo-search-cols a,.pdocrud-button-delete-all{
+    background: #9e0000;
+    color: #fff !important;
+}
+
+.pdocrud-pagination .pagination>li>a{
+    color:#000;
+}
+.pdocrud-pagination .pagination>.active>a{
+    background-color: #9e0000;
+    border-color: #9e0000;
+    color: #fff;
+}
+ .btn-group-xs>.btn, .btn-xs {
+    margin-left: 8px;
+}
+.panel-body {
+    padding: 15px;
+    background-color: #000;
+}
+.pdocrud-top-buttons p{
+    color: #fff;
+}
+.pdocrud-button-view{
+    margin-left: 8px;
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    background-image: none;
+    border: 1px solid transparent;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-weight: 400;
+    display: inline-block;
+}
+.fa-edit:before, .fa-pencil-square-o:before{
+    content: "\270f";
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+.pdocrud-button-edit{
+    margin-left: 8px;
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+    background-color: #286090;
+    border-color: #204d74;
+    background-image: none;
+    border: 1px solid transparent;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-weight: 400;
+    display: inline-block;
+}
+.fa-remove:before, .fa-close:before, .fa-times:before{
+    content: "\e020";
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+.pdocrud-button-delete{
+    margin-left: 8px;
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    background-image: none;
+    border: 1px solid transparent;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    font-weight: 400;
+    display: inline-block;
+}

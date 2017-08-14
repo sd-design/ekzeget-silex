@@ -1,0 +1,84 @@
+.pdocrud-table-container .page-title{
+    background: #318085;
+    color: #f0e68c;
+}
+.pdocrud-table-container .pdocrud-table-heading h3 {
+    float: left;
+    font-size: 20px;
+    margin: 0;
+}
+.pdocrud-table-container a,.pdocrud-table-container a:hover{
+    color: #fff;
+}
+.pdocrud-button-add{
+    color: #f0e68c !important;
+}
+.pdocrud-button-delete-all{
+    color: #000 !important;
+}
+.pdocrud-table th{
+    color: #f0e68c;
+}
+.pdocrud-table{
+    background: #34495e;
+    color: #fff;
+}
+.pdocrud-table tr:nth-child(odd),.pdocrud-table tr:nth-child(even){
+    background:#34495e !important;
+}
+
+.pdocrud-table i{
+    color: #f0e68c;
+}
+
+.pdocrud-export-options ul li a{
+    background: #318085;
+    color: #f0e68c;
+}
+.pdo-search-cols a,.pdocrud-button-delete-all{
+    background: #318085;
+    color: #f0e68c !important;
+}
+.pdocrud-pagination .pagination>li>a{
+    color:#000;
+    cursor: pointer;
+}
+.pdocrud-pagination .pagination>.active>a{
+    background-color: #34495e;
+    border-color: #34495e;
+    color: #f0e68c;
+}
+.panel-body{
+    background-color: #0e8c8a;
+}
+.pdocrud-top-buttons p{
+    color: #f0e68c
+}
+.pdocrud-button-view{
+    margin-right: 7px;
+}
+.pdocrud-button-edit{
+    margin-right: 7px;
+}
+.pdocrud-button-delete{
+    margin-right: 7px;
+}
+.table>thead:first-child>tr:first-child>th{
+    border-top: 0;
+    padding: 4px 10px;  
+    border-right: 1px solid #d5d5d5;
+}
+.pdocrud-table-container .table tbody tr td {
+    border-right: 1px solid #d5d5d5;
+    white-space: nowrap;
+    padding: 4px 10px;  
+}
+.pdocrud-table-container table tr.pdocrud-header-row th{
+    padding: 4px 10px;    
+}
+.pdocrud-table-container table tr.pdocrud-header-row th {
+    border-right: 1px solid #d5d5d5;
+}
+.pdocrud-table tr:nth-child(odd), .pdocrud-table tr:nth-child(even) {
+    background: #318085 !important;
+}

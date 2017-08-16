@@ -8,7 +8,7 @@
  */
 use services\URLS;
 
-?>
+?>  <div class="calendar_inside box3 text-center">
 <h3><?=$app['t']('about_book')?></h3>
 <?php
 foreach ($commentaries as $commentary):?>
@@ -24,3 +24,4 @@ foreach ($commentaries as $commentary):?>
         </a>
     </div>
 <?php endforeach;?>
+        </div>

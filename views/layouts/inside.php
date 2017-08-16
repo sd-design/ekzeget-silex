@@ -59,7 +59,7 @@ VK.Widgets.Like("vk_like", {type: "mini"});
               <div class="nav_verh">
               <?php
               if (!$app['session']->get('loggedin')) {
-                echo 'Здравствуйте, <b>Гость</b> | <a href="'.$base_url.'/auth">Вход</a> | <a href="'.$base_url.'/registration">Регистрация</a>';
+                  echo 'Здравствуйте, <b>Гость</b> | <a href="'.$base_url.'/auth">Вход</a> | <a href="'.$base_url.'/registration">Регистрация</a>';
               }
               echo RegularVisitor::widget(['top' => 240]);
               echo RegistrationInvitation::widget();
@@ -203,11 +203,25 @@ VK.Widgets.Like("vk_like", {type: "mini"});
         </div>
         <!--центральный блок -->
         <div class="col-sm-6 page-control">
-            <div class="page-content">
-                 <!-- начало вывода контента главы -->
+            <div class="page-content"><hr />
             <?=$contents?>
-             <!-- конец вывода контента главы -->         
-         
+                     
+            </div>
+        </div>
+        <!--правый блок -->
+        <div class="col-md-3">
+          <div class="calendar_inside box2 text-center">
+            <h4>Наши друзья:</h4>
+<a href="http://fond.predanie.ru/?banner=1" target="_blank"><img src="https://ekzeget.ru/IMG/partners/banner_predanie-200x100-01.gif"></a><br /><br />
+<a href="http://www.bogoslov.ru" target="_blank"><IMG src="https://ekzeget.ru/IMG/partners/banner_bogoslov_293x79.gif" WIDTH=200 BORDER=0 ALT="Богослов.ру"></a><br /><br />
+<!-- banner Elitcy was add 26.07.17 -->
+<a href="https://dialog.elitsy.ru/"><img src="https://s3-eu-west-1.amazonaws.com/elitsy/static/b/questions_elitsy_200x90.png" border="0" alt="православная социальная сеть «Елицы»" width="200" height="90" /></a><br />
+</div><br />
+<div align="center">
+
+<a href="http://orphus.ru" id="orphus" target="_blank"><img alt="Система Orphus" src="<?=$base_url?>/assets/IMG/orphus.gif" border="0" width="125" height="115" /></a>
+</div>
+        </div>
    
 </div>
 </section>
@@ -297,17 +311,4 @@ ga('create', 'UA-86114429-1', 'auto');
 ga('send', 'pageview'); 
 
 </script> 
-<!--функции о.Сергия -->
-<script defer type="text/javascript" src="<?=$assets?>/js/my/divOp1.js"></script>
-<script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/increaseFontSize.js"></script>
-<script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/disableBtn.js"></script>
-<script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/ShowPopup.js"></script>
-<script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/setup_mouse.js"></script>
-<script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/SendRequestzak.1.js"></script>
-<script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/toggler_z.js"></script>
-<script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/SendperevodGlava.js"></script>
-<script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/Sendmarkup.js"></script>
-<script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/SendRequestzametka.js"></script>
-<script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/toggler_sort.js"></script>
-<script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/Sendsort.js"></script>
 </body></html>

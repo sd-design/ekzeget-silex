@@ -8,13 +8,12 @@
 use widgets\Widget;
 
 ?>
-<div class="box" id="boxp">
+<div class="calendar_inside box1 text-center" id="boxp">
     <h3 id="open3_box">
-        <a onclick="divOp3(1);"><?= $app['t']('parallel_verses') ?></a>
+        <a onclick="divOp3(1);" class="btn btn-lg btn-primary"><?= $app['t']('parallel_verses') ?></a>
     </h3>
 
-    <div id="open3" style="margin-top: -15px;padding:1px 5px;text-align:right">
-        <a onclick="divOp3(1);"><img src="<?= $assets ?>/img/bottom.png" title="Раскрыть"/></a></div>
+    <div id="open3" style="margin-top: -15px;padding:1px 5px;text-align:right"></div>
     <div id="blok_open3" style="display: none;">
         <div id="para_aj">
             <?php

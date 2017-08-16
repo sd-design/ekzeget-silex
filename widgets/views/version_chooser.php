@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 $form = $app['form.factory']->createNamedBuilder(null, FormType::class)
     ->setMethod('GET')
     ->add('bible_version', ChoiceType::class, array(
+        'attr' => array('class' => 'form-control'),
         'choices' => $versions,
         'label' => false,
         'data' => $app['bible_version'],

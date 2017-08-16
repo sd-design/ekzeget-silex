@@ -12,10 +12,10 @@ use services\URLS;
 use widgets\Commentaries;
 
 ?>
-<div class="box">
+<div class="calendar_inside box1 text-center">
     <?php $modeId = $isResearch === Commentaries::MODE_COMMENTARY ? '1' : '5';?>
     <h3 id="open<?=$modeId?>_box">
-        <a onclick="divOp<?=$modeId?>(1);">
+        <a onclick="divOp<?=$modeId?>(1);"  class="btn btn-lg btn-primary">
             <?= $isResearch === Commentaries::MODE_COMMENTARY ? $app['t']('commentaries') : $app['t']('researches')?>
         </a>
     </h3>

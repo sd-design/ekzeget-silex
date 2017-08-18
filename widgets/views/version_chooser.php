@@ -12,7 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\FormType;
 $form = $app['form.factory']->createNamedBuilder(null, FormType::class)
     ->setMethod('GET')
     ->add('bible_version', ChoiceType::class, array(
-        'attr' => array('class' => 'form-control'),
+        'attr' => array('class' => 'form-control', 'ng-model' => 'urlVersion', 'ng-change' => 'chooserVersion()'),
         'choices' => $versions,
         'label' => false,
         'data' => $app['bible_version'],

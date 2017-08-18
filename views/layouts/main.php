@@ -58,9 +58,9 @@ VK.Widgets.Like("vk_like", {type: "mini"});
  <div class="navbar-right">
               <div class="nav_verh">
               <?php
-              if (!$app['session']->get('loggedin')) {
-                  echo 'Здравствуйте, <b>Гость</b> | <a href="auth">Вход</a> | <a href="registration">Регистрация</a>';
-              }
+              if (!$app['session']->get('loggedin')) { ?>
+                  Здравствуйте, <b>Гость</b> | <a href="<?=$base_url?>/auth/">Вход</a> | <a href="<?=$base_url?>/registration/">Регистрация</a>
+              <? }
               echo RegularVisitor::widget(['top' => 240]);
               echo RegistrationInvitation::widget();
               ?>
@@ -254,7 +254,7 @@ VK.Widgets.Like("vk_like", {type: "mini"});
         </div>
         <!--правый блок -->
         <div class="col-md-3">
-            <div class="box" id="boxpr"><h3>&#949;&#960;&#953;&#947;&#961;&#945;&#966;&#951;</h3>
+            <div id="boxpr"><h3>&#949;&#960;&#953;&#947;&#961;&#945;&#966;&#951;</h3>
                 <hr class="ekz">
                 <p class="epigraph">"Различные толкования даются не для того, чтобы их сравнивать и сопоставлять, какое из них лучше и адекватнее: каждое из них будет оправданным, если поможет хотя бы одному из тех, кто встал на путь богопознания, продвинуться по этому пути".</b></p><p style='text-align: right; margin-right: 10px;'>Гайденко В.П.</p><br />
             </div>

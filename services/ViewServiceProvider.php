@@ -48,6 +48,7 @@ class ViewServiceProvider implements ServiceProviderInterface
     {
         $app = get_app();
         $base_url = $app['base.url'];
+        $page_title = $app['page.title'];
         $assets = $app['assets.url'];
         include $this->findLayout();
         return ob_get_clean();
@@ -58,6 +59,7 @@ class ViewServiceProvider implements ServiceProviderInterface
         extract($parameters);
         $app = get_app();
         $base_url = $app['base.url'];
+        $page_title = $app['page.title'];
         $assets = $app['assets.url'];
         ob_start();
         include ($template[0] === '/' ? $template : $this->findTemplate($template)); //available parameters, $this(View) and $app

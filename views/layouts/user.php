@@ -17,7 +17,7 @@ use widgets\RegularVisitor;
 <!DOCTYPE html><html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="keywords" content="Библия Онлайн, толкование Священного Писания, переводы Библии, планы чтения Библии, Евангелие, аудиобиблия, слушать Библию, Библейские карты" />
 <meta name="description" content="Библия от «А» до «Я»: тексты Священного Писания в оригинале, и в различных переводах, толкования Отцов Церкви и современных богословов, исторические комментарии и справочники, интерактивные путешествия во времени и пространстве, аудиокниги и лекции. Ekzeget.ru - ваш проводник в мир Библии" /><meta property="og:image" content="<?=$assets?>/IMG/soc_kniga.png" />
 <link rel="image_src" href="/IMG/soc_kniga.png" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga.png" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga60x60.png" size="60x60" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga76x76.png" size="76x76" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga120x120.png" size="120x120" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga152x152.png" size="152x152" />
-<title><?=$this->getTitle()?></title>
+<title><?=$page_title?> | Ekzeget.ru - ваш проводник в мир Библии</title>
 <link rel="icon" href="<?=$assets?>/favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="<?=$assets?>/favicon.ico" type="image/x-icon" />
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,700,900" rel="stylesheet">
@@ -59,7 +59,7 @@ VK.Widgets.Like("vk_like", {type: "mini"});
               <div class="nav_verh">
               <?php
               if (!$app['session']->get('loggedin')) {
-                  echo 'Здравствуйте, <b>Гость</b> | <a href="'.$base_url.'/auth/login">Вход</a> | <a href="'.$base_url.'/registration/">Регистрация</a>';
+                  echo 'Здравствуйте, <b>Гость</b> | <a href="'.$base_url.'/auth">Вход</a> | <a href="'.$base_url.'/registration">Регистрация</a>';
               }
               echo RegularVisitor::widget(['top' => 240]);
               echo RegistrationInvitation::widget();
@@ -146,7 +146,7 @@ VK.Widgets.Like("vk_like", {type: "mini"});
     </div>
 </section>
 <section id="ekzeget">
-    <div class="container"><h1><?=$this->getTitle()?></h1></div>
+    <div class="container"><h1><?=$page_title?></h1></div>
 </section>
 
 <section id="page">

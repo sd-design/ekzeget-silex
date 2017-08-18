@@ -35,6 +35,14 @@ $this->setTitle($book->setLocale($app['current_locale'])->getName());
 if (empty($name_user)) $name_user=$_SESSION['name_user'] ?? null;
 //------------------------------------------------------------------------------------------------------------------
 ?>
+
+
+<style>
+    p {font-size: <?php echo $size;?>px;}
+</style>
+
+
+
 <div class="row" id="chapter_menu">
        
     <div class="col-md-6">
@@ -74,10 +82,72 @@ if (empty($name_user)) $name_user=$_SESSION['name_user'] ?? null;
                     ])?>
             <div id="osn_text">
             <ul class="bible-poem-text">
-                <!-- Angular text -->
-                <li class="fulltext" ng-repeat="item in myData.verses"><span class="js-popover-poem-bookmark-add"><sup>{{item.VerseNumber}}</sup>
-                </span><span ng-bind-html="item.Contents | to_trusted"></span>
-            </li>
+ <?php
+ ################################
+ /* TODO
+ $favorite = mysqli_query($connect, "SELECT * FROM host1222968_pass.favorite WHERE bookCode LIKE '$bookCode' AND chapterNum LIKE '$chapterNum' AND name_user LIKE '$name_user'");
+ $num_fav = mysqli_num_rows($favorite);
+ for ($f=0; $f<$num_fav; $f++)
+ {
+     $fav_stih = mysqli_fetch_array($favorite);
+     $mas_fav[$f] = preg_split("/\s/", $fav_stih['st']);
+     $color_fav[$f] = $fav_stih['color'];
+ }
+ */
+ ################################
+ $verseNum = 0;
+ foreach ($verses as $verse) {
+     $verseNum++;
+     /* TODO
+     if ($num_fav > 0) {
+         for ($f=0; $f < $num_fav; $f++) {
+             if (in_array($verseNum, $mas_fav[$f])) {
+                 echo '<span style="background:'.$color_fav[$f].'">';
+             }
+         }
+     }
+     */
+     if ($app['bible_version'] == 'grek') echo '<span class="grek"><b>';
+     if ($app['bible_version'] == 'csya_old') echo '<span class="irmologion"><b>';
+
+     $hasVerseComment = isset($commentedVerses[$verse->getPointer()]);
+     $hasVerseCommentTxt = $hasVerseComment ? 'Толкование на стих имеется' : 'Толкование на стих отсутствует';
+     $hasVerseCommentColour = $hasVerseComment ? '#222;' : '#777;';
+     $boldStyle = '';
+     if ($verse->isMarked()) {
+         $boldStyle = 'font-weight: bold; font-size:115%';
+     }
+     $url = $app->url(
+         URLS::ALL['BIBLE_BOOK_CHAPTER_VERSE'],
+         ['book' => $bookCode, 'chapterNum' => $chapterNum, 'verse' => $verseNum]
+     );
+
+     ?>
+     <? /* <span><a name="<?=$verseNum?>"></a><sup><b><?=$verseNum?></b></sup></span>
+     <span><a style="color:<?=$hasVerseCommentColour?><?=$boldStyle?>" href="<?=$url?>" title="<?=$hasVerseCommentTxt?>">
+        <?=$verse->getContents()?></a></span>*/ ?>
+
+        <li class="fulltext"><span class="js-popover-poem-bookmark-add"><sup><?=$verseNum?></sup></span><span><a style="color:<?=$hasVerseCommentColour?><?=$boldStyle?>" href="<?=$url?>" title="<?=$hasVerseCommentTxt?>">
+        <?=$verse->getContents()?></a></span>
+									</li>
+
+     <?php
+     if (in_array($app['bible_version'], ['grek','csya_old'])) echo '</b></span>';
+
+     /* TODO
+ if ($num_fav > 0) {
+     for ($f=0; $f<$num_fav; $f++)
+     {
+         if (in_array ($verseNum , $mas_fav[$f]))
+         {
+             echo '</span>';
+         }
+     }
+ }*/
+ }
+
+ if ($verses->count() === 0) echo '<p style="color: red">Перевод на на данную главу отсутствует. Выберите другой.</p>';
+ ?>
  </ul>
 </div>
             <?= BackAndForth::widget([

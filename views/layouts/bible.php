@@ -14,7 +14,7 @@ use widgets\RegistrationInvitation;
 use widgets\RegularVisitor;
 
 ?>
-<!DOCTYPE html><html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="keywords" content="Библия Онлайн, толкование Священного Писания, переводы Библии, планы чтения Библии, Евангелие, аудиобиблия, слушать Библию, Библейские карты" />
+<!DOCTYPE html><html lang="ru" ng-app="bible"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="keywords" content="Библия Онлайн, толкование Священного Писания, переводы Библии, планы чтения Библии, Евангелие, аудиобиблия, слушать Библию, Библейские карты" />
 <meta name="description" content="Библия от «А» до «Я»: тексты Священного Писания в оригинале, и в различных переводах, толкования Отцов Церкви и современных богословов, исторические комментарии и справочники, интерактивные путешествия во времени и пространстве, аудиокниги и лекции. Ekzeget.ru - ваш проводник в мир Библии" /><meta property="og:image" content="<?=$assets?>/IMG/soc_kniga.png" />
 <link rel="image_src" href="/IMG/soc_kniga.png" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga.png" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga60x60.png" size="60x60" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga76x76.png" size="76x76" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga120x120.png" size="120x120" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga152x152.png" size="152x152" />
 <title><?=$this->getTitle()?></title>
@@ -26,6 +26,8 @@ use widgets\RegularVisitor;
     $this->assets();
     ?>
 <!--noindex-->
+<script type="text/javascript" src="<?=$assets?>/js/angular.min.js"></script>
+<script src="<?=$assets?>/js/app_bible.js">
 <!-- Скрипты кнопок соцсетей -->
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?105"></script>
 <script  type="text/javascript">
@@ -41,7 +43,7 @@ VK.Widgets.Like("vk_like", {type: "mini"});
 <!--/noindex-->
 <meta name='yandex-verification' content='6940e802632820aa' />
 </head>
-<body>
+<body ng-controller="AjaxController">
 <section id="head">
     <div class="container">
         <nav class="navbar navbar-default">
@@ -59,7 +61,7 @@ VK.Widgets.Like("vk_like", {type: "mini"});
               <div class="nav_verh">
               <?php
               if (!$app['session']->get('loggedin')) {
-                echo 'Здравствуйте, <b>Гость</b> | <a href="'.$base_url.'/auth">Вход</a> | <a href="'.$base_url.'/registration">Регистрация</a>';
+                echo 'Здравствуйте, <b>Гость</b> | <a href="'.$base_url.'/auth/login">Вход</a> | <a href="'.$base_url.'/registration/">Регистрация</a>';
               }
               echo RegularVisitor::widget(['top' => 240]);
               echo RegistrationInvitation::widget();
@@ -105,13 +107,13 @@ VK.Widgets.Like("vk_like", {type: "mini"});
                     <div class="col-md-6">
                         <div class="rss">
                         <a href="https://vk.com/ekzeget" target="_blank" title="Мы ВКонтакте">
-                        <img style="margin: 0 5px 0 0" src="/IMG/vk.png" /></a> 
+                        <img style="margin: 0 5px 0 0" src="<?=$assets?>/IMG/vk.png" /></a> 
                         <a href="https://www.facebook.com/groups/ekzeget/" target="_blank" title="Мы на Facebook'e">
-                        <img style="margin: 0 5px 0 0" src="/IMG/f.png" /></a> 
+                        <img style="margin: 0 5px 0 0" src="<?=$assets?>/IMG/f.png" /></a> 
                         <a href="https://twitter.com/EkzegetRU" target="_blank" title="Мы в твиттере">
-                        <img style="margin: 0 5px 0 0" src="/IMG/tvit.png" /></a>
+                        <img style="margin: 0 5px 0 0" src="<?=$assets?>/IMG/tvit.png" /></a>
                         <a href="https://www.youtube.com/channel/UCymsjx24eU3kRFUjeBsh47A" target="_blank" title="Наш канал на YouTube">
-                        <img style="margin: 0 5px 0 0" src="/IMG/youtube.png"></a>
+                        <img style="margin: 0 5px 0 0" src="<?=$assets?>/IMG/youtube.png"></a>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -302,7 +304,6 @@ ga('send', 'pageview');
 <script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/increaseFontSize.js"></script>
 <script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/disableBtn.js"></script>
 <script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/ShowPopup.js"></script>
-<script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/setup_mouse.js"></script>
 <script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/SendRequestzak.1.js"></script>
 <script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/toggler_z.js"></script>
 <script defer type="text/javascript" src="<?=$base_url?>/assets/js/my/SendperevodGlava.js"></script>

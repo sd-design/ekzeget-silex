@@ -28,6 +28,7 @@ class BibleController extends Controller
                     'book'      => $book->setLocale($app['current_locale']),
                     'chapters'  => $chapters,
                     'versesQTY' => Bible::countVerses($chapters),
+                    'chaptersQTY'=> Bible::getChapters($app['bible_version'], $book)->count(),
                     'request'   => $request,
             ]);
         });

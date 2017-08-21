@@ -13,7 +13,7 @@ class News extends Widget
         $news = NewsQuery::create()
             ->filterByLocale(get_app()['current_locale'])
             ->orderByDate(Criteria::DESC)
-            ->limit(10)
+            ->limit(5)
             ->find();
 
         return $this->render('news', [

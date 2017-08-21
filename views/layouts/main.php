@@ -76,14 +76,10 @@ VK.Widgets.Like("vk_like", {type: "mini"});
 <div class="calendar_inside">
     <div id ="chten">
                 <div id="response">
-                            <div class="icon-calendar"><a id="toggler" title="Перейти на любую дату чтения"><img src="<?=$assets?>/IMG/day.png"/ ></a>
-                            </div>
-                            <div id="answer" style="display: none;">Введите дату богослужебных чтений:<br /> <input type="date" id="data_today" maxlength="15" pattern="\d+.+" placeholder="гггг.мм.дд">     <button type="submit" onclick="SendRequestPOST();" name="submit" style="padding: 6px 8px 5px 8px;font-size: 11px;">OK</button>
-                            </div>
-                            <div id="chten_today">Сегодня <font color=#DF0404>28 июля</font></div>
                             <div class="p_content3">
                                 <div id="page_content3" class="scroll-pane1">
                                     <!-- ajax block -->
+                                    <?= Reading::widget()?>
                                     <div style="text-align: center"><span style=" font-size: 13px;">Четверг 10-й седмицы по Пятидесятнице</span></div><div style="text-align: center"><span style=" font-size: 13px;">Смоленской иконы Божией Матери «Одигитрия» (Путеводительница)</span>
                                     </div>
                                     <div style="text-align: center">
@@ -105,13 +101,13 @@ VK.Widgets.Like("vk_like", {type: "mini"});
                     <div class="col-md-6">
                         <div class="rss">
                         <a href="https://vk.com/ekzeget" target="_blank" title="Мы ВКонтакте">
-                        <img style="margin: 0 5px 0 0" src="/IMG/vk.png" /></a> 
+                        <img style="margin: 0 5px 0 0" src="<?=$assets?>/IMG/vk.png" /></a> 
                         <a href="https://www.facebook.com/groups/ekzeget/" target="_blank" title="Мы на Facebook'e">
-                        <img style="margin: 0 5px 0 0" src="/IMG/f.png" /></a> 
+                        <img style="margin: 0 5px 0 0" src="<?=$assets?>/IMG/f.png" /></a> 
                         <a href="https://twitter.com/EkzegetRU" target="_blank" title="Мы в твиттере">
-                        <img style="margin: 0 5px 0 0" src="/IMG/tvit.png" /></a>
+                        <img style="margin: 0 5px 0 0" src="<?=$assets?>/IMG/tvit.png" /></a>
                         <a href="https://www.youtube.com/channel/UCymsjx24eU3kRFUjeBsh47A" target="_blank" title="Наш канал на YouTube">
-                        <img style="margin: 0 5px 0 0" src="/IMG/youtube.png"></a>
+                        <img style="margin: 0 5px 0 0" src="<?=$assets?>/IMG/youtube.png"></a>
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -130,13 +126,7 @@ VK.Widgets.Like("vk_like", {type: "mini"});
         </div>
     </form>
 <!--/noindex-->
-                        <div class="general_menu">
-                        <a href="<?=$base_url?>/propovedi" class="btn btn-default">Проповеди</a>
-                        <a href="<?=$base_url?>/slovari" class="btn btn-default">Словари</a> 
-                        <a href="<?=$base_url?>/maps" class="btn btn-default">Карты</a> 
-                        <a href="<?=$base_url?>/tolks_all" class="btn btn-default">Экзегеты</a> 
-                        <a href="<?=$base_url?>/lektorij" class="btn btn-default">Лекторий</a> 
-                        </div>
+   <?= \widgets\GeneralMenu::widget()?>
                     </div>
                 </div>
         </div>
@@ -207,27 +197,7 @@ VK.Widgets.Like("vk_like", {type: "mini"});
 
             <div class="page-content"><hr />
             <?=$contents?>
-                <div class="news-list">
-                    <h3>НОВОСТИ</h3>
-                    <hr class="ekz">
-                        <ul class="news">
-                            <li><h4>19 июл. 2017 г.</h4>
-                            <p>Сейчас на сайте размещено <b>144 273</b> толкования на 33 365 стихов Священного Писания. Всего в Библии 37 107 стихов, то есть толкования имеются примерно на <b>90%</b> всего Священного Писания (на весь Новый Завет и часть Ветхого).</p>
-                            </li>
-                            <li><h4>4 мая 2017 г.</h4>
-                            <p>Улучшена функция по добавлению личных закладок. Теперь, добавляя закладку, Вы тут же видите, какие цвета закладок уже заняты другими Вашими закладками, а какие свободны.<br/>
-                            <p>Функция закладок (как и многие другие полезные функции) доступна только зарегистрированным пользователям.</p>
-                            </li>
-                            <li><h4>24 апреля 2017 г.</h4>
-                            <p>Библия (от греч. βιβλία – книги) – собрание Богодухновенных книг, написанных пророками и апостолами по велению Духа Божия.<br />Еще больше информации о Библии, история написания и некоторые факты о ней на нашем <a href="#">сайте.</a>
-                            </p>
-                            </li>
-                            <li><h4>19 апр. 2017 г.</h4>
-                            <p>Сейчас на сайте размещено 132 786 толкований 349 экзегетов на 31 572 стиха Священного Писания. Толкования имеются примерно на 85% всего Священного Писания (на весь Новый Завет и часть Ветхого).
-                            </p>
-                            </li>
-                        </ul>
-                </div>
+            <?= \widgets\News::widget()?>
                 <div class="news-list">
                     <h3>ОБНОВЛЕНИЯ</h3>
                     <hr class="ekz">

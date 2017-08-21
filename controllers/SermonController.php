@@ -10,10 +10,24 @@ use Silex\ControllerCollection;
 
 class SermonController extends Controller
 {
+    protected $layout = 'sermon';
 
     protected function defineActions(ControllerCollection $sermon)
     {
+        $sermon->get('/', function (\Application $app) {
+            $app['page.title']= "Проповеди";
+            $events = EventQuery::create()
+            ->useI18nQuery($app['current_locale'])
+            ->find();
+
+
+            return $this->render('index', [
+                'events' => $events,
+            ]);
+        });
+
         $sermon->get('/events/', function (\Application $app) {
+            $app['page.title']= "Проповеди";
             $events = EventQuery::create()
                 ->useI18nQuery($app['current_locale'])
                 ->endUse()
@@ -25,6 +39,7 @@ class SermonController extends Controller
         });
 
         $sermon->get('/topics/', function (\Application $app) {
+            $app['page.title']= "Проповеди";
             $sermons = SermonQuery::create()
                 ->select('topic')
                 ->groupByTopic()
@@ -36,6 +51,7 @@ class SermonController extends Controller
         });
 
         $sermon->get('/{event}/', function (\Application $app, $event) {
+            $app['page.title']= "Проповеди";
             $sermons = SermonQuery::create()
                 ->select(['id', 'topic'])
                 ->filterByEventId($event)
@@ -54,6 +70,7 @@ class SermonController extends Controller
         });
 
         $sermon->get('/{event}/author/{author}/', function ($event, $author) {
+            $app['page.title']= "Проповеди";
             $sermons = SermonQuery::create()
                 ->filterByEventId($event)
                 ->useAuthorQuery()
@@ -69,6 +86,7 @@ class SermonController extends Controller
         });
 
         $sermon->get('/{event}/{sermon}/', function ($event, $sermon) {
+            $app['page.title']= "Проповеди";
             $sermon = SermonQuery::create()
                 ->findOneById($sermon);
 

@@ -2,12 +2,13 @@
 
 namespace controllers;
 
+
 use Silex\ControllerCollection;
 use Symfony\Component\HttpFoundation\Request;
 
 class ErrorController extends Controller
 {
-    protected $layout = 'inside';
+    protected $layout = 'bible';
     protected $templateNameSpace = 'error';
 
     public static function error(\Throwable $e, Request $request = null, $code = null)

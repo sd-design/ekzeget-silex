@@ -50,10 +50,10 @@ VK.Widgets.Like("vk_like", {type: "mini"});
 
             <div class="navbar-header">
                 <ul class="nav navbar-nav">
-                    <li><a href="<?=$base_url?>/o_proekte"><div class="tehnav" style="padding-left:0"> О проекте</div></a></li>
-                    <li><a href="<?=$base_url?>/new_tolk"><div class="tehnav"> Обновления </div></a></li>
-                    <li><a href="<?=$base_url?>/generator"><div class="tehnav">Генератор ссылок</div></a></li>
-                    <li><a href="<?=$base_url?>/zap"><div class="tehnav"> Гостевая </div></a></li>
+                    <li><a href="<?=$base_url?>/o_proekte/"><div class="tehnav" style="padding-left:0"> О проекте</div></a></li>
+                    <li><a href="<?=$base_url?>/new_tolk/"><div class="tehnav"> Обновления </div></a></li>
+                    <li><a href="<?=$base_url?>/generator/"><div class="tehnav">Генератор ссылок</div></a></li>
+                    <li><a href="<?=$base_url?>/zap/"><div class="tehnav"> Гостевая </div></a></li>
                 </ul>
             
         </div>
@@ -132,13 +132,9 @@ VK.Widgets.Like("vk_like", {type: "mini"});
         </div>
     </form>
 <!--/noindex-->
-                        <div class="general_menu">
-                        <a href="<?=$base_url?>/propovedi" class="btn btn-default">Проповеди</a>
-                        <a href="<?=$base_url?>/slovari" class="btn btn-default">Словари</a> 
-                        <a href="<?=$base_url?>/maps" class="btn btn-default">Карты</a> 
-                        <a href="<?=$base_url?>/tolks_all" class="btn btn-default">Экзегеты</a> 
-                        <a href="<?=$base_url?>/lektorij" class="btn btn-default">Лекторий</a> 
-                        </div>
+
+<?= \widgets\GeneralMenu::widget()?>
+
                     </div>
                 </div>
         </div>

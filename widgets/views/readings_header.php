@@ -9,13 +9,9 @@
  */
 ?>
 
-<div style="width: 22px; float:right; margin: -5px 0 0 260px; cursor: pointer;position: absolute; "><a id="toggler"
-                                                                                                       title="Перейти на любую дату чтения"><img
-                src="<?=$assets?>/img/day.png"/ ></a>
-    <div id="answer" style="display: none;">Введите дату богослужебных чтений:<br/> <input type="date" id="data_today"
-                                                                                           maxlength="15"
-                                                                                           pattern="\d+.+"
-                                                                                           placeholder="гггг.мм.дд">
+<div class="icon-calendar"><a id="toggler" title="Перейти на любую дату чтения"><img src="<?=$assets?>/IMG/day.png"/ ></a>
+    <div id="answer" style="display: none;">Введите дату богослужебных чтений:<br/>
+    <input type="date" id="data_today" maxlength="15"pattern="\d+.+" placeholder="гггг.мм.дд">
         <button type="submit" onclick="SendRequestPOST();" name="submit"
                 style="padding: 6px 8px 5px 8px;font-size: 11px;">OK
         </button>

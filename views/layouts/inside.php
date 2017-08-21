@@ -76,14 +76,12 @@ VK.Widgets.Like("vk_like", {type: "mini"});
 <div class="calendar_inside">
     <div id ="chten">
                 <div id="response">
-                            <div class="icon-calendar"><a id="toggler" title="Перейти на любую дату чтения"><img src="<?=$assets?>/IMG/day.png"/ ></a>
-                            </div>
                             <div id="answer" style="display: none;">Введите дату богослужебных чтений:<br /> <input type="date" id="data_today" maxlength="15" pattern="\d+.+" placeholder="гггг.мм.дд">     <button type="submit" onclick="SendRequestPOST();" name="submit" style="padding: 6px 8px 5px 8px;font-size: 11px;">OK</button>
                             </div>
-                            <div id="chten_today">Сегодня <font color=#DF0404>28 июля</font></div>
-                            <div class="p_content3">
+                                                       <div class="p_content3">
                                 <div id="page_content3" class="scroll-pane1">
                                     <!-- ajax block -->
+                                    <?= Reading::widget()?>
                                     <div style="text-align: center"><span style=" font-size: 13px;">Четверг 10-й седмицы по Пятидесятнице</span></div><div style="text-align: center"><span style=" font-size: 13px;">Смоленской иконы Божией Матери «Одигитрия» (Путеводительница)</span>
                                     </div>
                                     <div style="text-align: center">
@@ -130,13 +128,7 @@ VK.Widgets.Like("vk_like", {type: "mini"});
         </div>
     </form>
 <!--/noindex-->
-                        <div class="general_menu">
-                        <a href="<?=$base_url?>/propovedi" class="btn btn-default">Проповеди</a>
-                        <a href="<?=$base_url?>/slovari" class="btn btn-default">Словари</a> 
-                        <a href="<?=$base_url?>/maps" class="btn btn-default">Карты</a> 
-                        <a href="<?=$base_url?>/tolks_all" class="btn btn-default">Экзегеты</a> 
-                        <a href="<?=$base_url?>/lektorij" class="btn btn-default">Лекторий</a> 
-                        </div>
+<?= \widgets\GeneralMenu::widget()?>
                     </div>
                 </div>
         </div>
@@ -155,29 +147,29 @@ VK.Widgets.Like("vk_like", {type: "mini"});
         <!--левый блок -->
         <div class="col-sm-3">
         <!-- НАЧАЛО МЕНЮ -->
-            <ul id="myTab" class="nav nav-tabs">
-                <li class="active"><a class="menu_bible" href="#panel1">Новый Завет</a></li>
-                <li><a class="menu_bible" href="#panel2">Ветхий Завет</a></li>
-            </ul>
-                <div class="tabsmenu">
-                    <div class="tab-content">
-                        <div id="panel1" class="tab-pane fade in active">
-                            <div id="menu_nz">
-                                <ul id="verticalmenu" class="glossymenu"  style="border-top: 1px solid #C7C7C7; ">
-                                <?= BooksList::widget(['testament' => BookTableMap::COL_TESTAMENT_NT])?>
-                                </ul>
-                            </div>
+        <ul id="myTab" class="nav nav-tabs">
+        <li class="active"><a class="menu_bible" href="#panel1">Новый Завет</a></li>
+        <li><a class="menu_bible" href="#panel2">Ветхий Завет</a></li>
+    </ul>
+        <div class="tabsmenu">
+            <div class="tab-content">
+                <div id="panel1" class="tab-pane fade in active">
+                    <div id="menu_nz">
+                        <ul id="verticalmenu" class="glossymenu"  style="border-top: 1px solid #C7C7C7; ">
+                        <?= BooksList::widget(['testament' => BookTableMap::COL_TESTAMENT_NT])?>
+                        </ul>
                     </div>
-                <div id="panel2" class="tab-pane fade">
-                <div id="menu_vz">
-                <ul id="verticalmenu" class="glossymenu"  style="border-top: 1px solid #C7C7C7; ">
-                <?= BooksList::widget(['testament' =>  BookTableMap::COL_TESTAMENT_OT])?>
-                </ul><br /><span style="padding-left: 10px; font-size:80%">* - неканонические книги</span><br />
-
-                </div>
-                </div>
             </div>
+        <div id="panel2" class="tab-pane fade">
+        <div id="menu_vz">
+        <ul id="verticalmenu" class="glossymenu"  style="border-top: 1px solid #C7C7C7; ">
+        <?= BooksList::widget(['testament' =>  BookTableMap::COL_TESTAMENT_OT])?>
+        </ul><br /><span style="padding-left: 10px; font-size:80%">* - неканонические книги</span><br />
+
+        </div>
+        </div>
     </div>
+</div>
 <!-- КОНЕЦ МЕНЮ -->
 <br/>
         <!-- BANNERs -->
@@ -210,7 +202,7 @@ VK.Widgets.Like("vk_like", {type: "mini"});
         </div>
         <!--правый блок -->
         <div class="col-md-3">
-          <div class="calendar_inside box2 text-center">
+          <div class="calendar_inside box3 text-center">
             <h4>Наши друзья:</h4>
 <a href="http://fond.predanie.ru/?banner=1" target="_blank"><img src="https://ekzeget.ru/IMG/partners/banner_predanie-200x100-01.gif"></a><br /><br />
 <a href="http://www.bogoslov.ru" target="_blank"><IMG src="https://ekzeget.ru/IMG/partners/banner_bogoslov_293x79.gif" WIDTH=200 BORDER=0 ALT="Богослов.ру"></a><br /><br />

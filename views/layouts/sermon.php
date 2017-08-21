@@ -14,7 +14,7 @@ use widgets\RegistrationInvitation;
 use widgets\RegularVisitor;
 
 ?>
-<!DOCTYPE html><html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="keywords" content="Библия Онлайн, толкование Священного Писания, переводы Библии, планы чтения Библии, Евангелие, аудиобиблия, слушать Библию, Библейские карты" />
+<!DOCTYPE html><html lang="ru" ng-app="sermon"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="keywords" content="Библия Онлайн, толкование Священного Писания, переводы Библии, планы чтения Библии, Евангелие, аудиобиблия, слушать Библию, Библейские карты" />
 <meta name="description" content="Библия от «А» до «Я»: тексты Священного Писания в оригинале, и в различных переводах, толкования Отцов Церкви и современных богословов, исторические комментарии и справочники, интерактивные путешествия во времени и пространстве, аудиокниги и лекции. Ekzeget.ru - ваш проводник в мир Библии" /><meta property="og:image" content="<?=$assets?>/IMG/soc_kniga.png" />
 <link rel="image_src" href="/IMG/soc_kniga.png" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga.png" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga60x60.png" size="60x60" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga76x76.png" size="76x76" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga120x120.png" size="120x120" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga152x152.png" size="152x152" />
 <title><?=$page_title?> | Ekzeget.ru - ваш проводник в мир Библии</title>
@@ -26,6 +26,8 @@ use widgets\RegularVisitor;
     $this->assets();
     ?>
 <!--noindex-->
+<script type="text/javascript" src="<?=$assets?>/js/angular.min.js"></script>
+<script src="<?=$assets?>/js/app_sermon.js">
 <!-- Скрипты кнопок соцсетей -->
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?105"></script>
 <script  type="text/javascript">
@@ -41,7 +43,7 @@ VK.Widgets.Like("vk_like", {type: "mini"});
 <!--/noindex-->
 <meta name='yandex-verification' content='6940e802632820aa' />
 </head>
-<body>
+<body ng-controller="AjaxController">
 <section id="head">
     <div class="container">
         <nav class="navbar navbar-default">
@@ -198,7 +200,9 @@ VK.Widgets.Like("vk_like", {type: "mini"});
         <!--центральный блок -->
         <div class="col-sm-6 page-control">
             <div class="page-content"><hr />
+            <!-- начало вывода Angular -->
             <?=$contents?>
+             <!-- конец вывода Angular -->     
                      
             </div>
         </div>

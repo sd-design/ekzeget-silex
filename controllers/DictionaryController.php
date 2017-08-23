@@ -10,9 +10,17 @@ use Silex\ControllerCollection;
 
 class DictionaryController extends Controller
 {
+    protected $layout = 'dictionary';
 
     protected function defineActions(ControllerCollection $dictionary)
     {
+
+        $dictionary->get('/', function (\Application $app, $locale) {
+            $app['page.title']= "Словари";
+            return $this->render('index');
+        })
+            ->value('locale', get_app()['current_locale']);
+
         $dictionary->get('/list/{locale}', function (\Application $app, $locale) {
             $dictionaries = DictionaryQuery::create()->findByLocaleFrom($locale);
             return $this->render('list', [

@@ -14,10 +14,10 @@ use widgets\RegistrationInvitation;
 use widgets\RegularVisitor;
 
 ?>
-<!DOCTYPE html><html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="keywords" content="Библия Онлайн, толкование Священного Писания, переводы Библии, планы чтения Библии, Евангелие, аудиобиблия, слушать Библию, Библейские карты" />
+<!DOCTYPE html><html lang="ru" ng-app="dictionary"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="keywords" content="Библия Онлайн, толкование Священного Писания, переводы Библии, планы чтения Библии, Евангелие, аудиобиблия, слушать Библию, Библейские карты" />
 <meta name="description" content="Библия от «А» до «Я»: тексты Священного Писания в оригинале, и в различных переводах, толкования Отцов Церкви и современных богословов, исторические комментарии и справочники, интерактивные путешествия во времени и пространстве, аудиокниги и лекции. Ekzeget.ru - ваш проводник в мир Библии" /><meta property="og:image" content="<?=$assets?>/IMG/soc_kniga.png" />
 <link rel="image_src" href="/IMG/soc_kniga.png" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga.png" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga60x60.png" size="60x60" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga76x76.png" size="76x76" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga120x120.png" size="120x120" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga152x152.png" size="152x152" />
-<title><?=$this->getTitle()?></title>
+<title><?=$page_title?> | Ekzeget.ru - ваш проводник в мир Библии</title>
 <link rel="icon" href="<?=$assets?>/favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="<?=$assets?>/favicon.ico" type="image/x-icon" />
 <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,700,900" rel="stylesheet">
@@ -26,6 +26,8 @@ use widgets\RegularVisitor;
     $this->assets();
     ?>
 <!--noindex-->
+<script type="text/javascript" src="<?=$assets?>/js/angular.min.js"></script>
+<script src="<?=$assets?>/js/app_dictionary.js">
 <!-- Скрипты кнопок соцсетей -->
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?105"></script>
 <script  type="text/javascript">
@@ -41,26 +43,26 @@ VK.Widgets.Like("vk_like", {type: "mini"});
 <!--/noindex-->
 <meta name='yandex-verification' content='6940e802632820aa' />
 </head>
-<body>
+<body ng-controller="AjaxController">
 <section id="head">
     <div class="container">
         <nav class="navbar navbar-default">
 
             <div class="navbar-header">
                 <ul class="nav navbar-nav">
-                    <li><a href="<?=$base_url?>/o_proekte"><div class="tehnav" style="padding-left:0"> О проекте</div></a></li>
-                    <li><a href="<?=$base_url?>/new_tolk"><div class="tehnav"> Обновления </div></a></li>
-                    <li><a href="<?=$base_url?>/generator"><div class="tehnav">Генератор ссылок</div></a></li>
-                    <li><a href="<?=$base_url?>/zap"><div class="tehnav"> Гостевая </div></a></li>
+                    <li><a href="<?=$base_url?>/o_proekte/"><div class="tehnav" style="padding-left:0"> О проекте</div></a></li>
+                    <li><a href="<?=$base_url?>/new_tolk/"><div class="tehnav"> Обновления </div></a></li>
+                    <li><a href="<?=$base_url?>/generator/"><div class="tehnav">Генератор ссылок</div></a></li>
+                    <li><a href="<?=$base_url?>/zap/"><div class="tehnav"> Гостевая </div></a></li>
                 </ul>
             
         </div>
  <div class="navbar-right">
               <div class="nav_verh">
               <?php
-              if (!$app['session']->get('loggedin')) { ?>
-                  Здравствуйте, <b>Гость</b> | <a href="<?=$base_url?>/auth/">Вход</a> | <a href="<?=$base_url?>/registration/">Регистрация</a>
-              <? }
+              if (!$app['session']->get('loggedin')) {
+                  echo 'Здравствуйте, <b>Гость</b> | <a href="'.$base_url.'/auth/">Вход</a> | <a href="'.$base_url.'/registration/">Регистрация</a>';
+              }
               echo RegularVisitor::widget(['top' => 240]);
               echo RegistrationInvitation::widget();
               ?>
@@ -76,10 +78,14 @@ VK.Widgets.Like("vk_like", {type: "mini"});
 <div class="calendar_inside">
     <div id ="chten">
                 <div id="response">
+                            <div class="icon-calendar"><a id="toggler" title="Перейти на любую дату чтения"><img src="<?=$assets?>/IMG/day.png"/ ></a>
+                            </div>
+                            <div id="answer" style="display: none;">Введите дату богослужебных чтений:<br /> <input type="date" id="data_today" maxlength="15" pattern="\d+.+" placeholder="гггг.мм.дд">     <button type="submit" onclick="SendRequestPOST();" name="submit" style="padding: 6px 8px 5px 8px;font-size: 11px;">OK</button>
+                            </div>
+                            <div id="chten_today">Сегодня <font color=#DF0404>28 июля</font></div>
                             <div class="p_content3">
                                 <div id="page_content3" class="scroll-pane1">
                                     <!-- ajax block -->
-                                    <?= Reading::widget()?>
                                     <div style="text-align: center"><span style=" font-size: 13px;">Четверг 10-й седмицы по Пятидесятнице</span></div><div style="text-align: center"><span style=" font-size: 13px;">Смоленской иконы Божией Матери «Одигитрия» (Путеводительница)</span>
                                     </div>
                                     <div style="text-align: center">
@@ -126,7 +132,7 @@ VK.Widgets.Like("vk_like", {type: "mini"});
         </div>
     </form>
 <!--/noindex-->
-   <?= \widgets\GeneralMenu::widget()?>
+<?= \widgets\GeneralMenu::widget()?>
                     </div>
                 </div>
         </div>
@@ -136,7 +142,7 @@ VK.Widgets.Like("vk_like", {type: "mini"});
     </div>
 </section>
 <section id="ekzeget">
-    <div class="container"><h1><?=$this->getTitle()?></h1></div>
+    <div class="container"><h1><?=$page_title?></h1></div>
 </section>
 
 <section id="page">
@@ -193,48 +199,23 @@ VK.Widgets.Like("vk_like", {type: "mini"});
         </div>
         <!--центральный блок -->
         <div class="col-sm-6 page-control">
-          <div class="page-content">
+            <div class="page-content"><hr />
+            <!-- начало вывода Angular -->
             <?=$contents?>
-            <?= \widgets\News::widget()?>
-                <div class="news-list">
-                    <h3>ОБНОВЛЕНИЯ</h3>
-                    <hr class="ekz">
-                        <ul class="news" id="update">
-                            <li><h4>14 авг. 2017 г. 08:35</h4>
-                            <p><span class="blood">3 Цар. 7:21.</span> <a href="">Ишодад из Мерва</a> (Александр Самойлов).</p>
-                            </li>
-                            <li><h4>14 авг. 2017 г. 08:33</h4>
-                            <p><span class="blood">3 Цар. 7:20.</span> <a href="">Беда Достопочтенный</a> (Александр Самойлов).</p>
-                            </li>
-                            <li><h4>14 авг. 2017 г. 08:31</h4>
-                            <p><span class="blood">3 Цар. 7:19.</span> <a href="">Беда Достопочтенный</a> (Александр Самойлов).</p>
-                            </li>
-                            <li><h4>14 авг. 2017 г. 06:54</h4>
-                            <p><span class="blood">3 Цар. 7:18.</span> <a href="">Беда Достопочтенный</a> (Александр Самойлов).</p>
-                            </li>
-                            <li><h4>14 авг. 2017 г. 06:51</h4>
-                            <p><span class="blood">3 Цар. 7:17.</span> <a href="">Беда Достопочтенный</a> (Александр Самойлов).</p>
-                            </li>
-
-                        </ul>
-                </div>
+             <!-- конец вывода Angular -->     
+                     
             </div>
         </div>
         <!--правый блок -->
         <div class="col-md-3">
-            <div id="boxpr"><h3>&#949;&#960;&#953;&#947;&#961;&#945;&#966;&#951;</h3>
-                <hr class="ekz">
-                <p class="epigraph">"Различные толкования даются не для того, чтобы их сравнивать и сопоставлять, какое из них лучше и адекватнее: каждое из них будет оправданным, если поможет хотя бы одному из тех, кто встал на путь богопознания, продвинуться по этому пути".</b></p><p style='text-align: right; margin-right: 10px;'>Гайденко В.П.</p><br />
-            </div>
-            <div class="calendar_inside box2 text-center">
+          <div class="calendar_inside box3 text-center">
             <h4>Наши друзья:</h4>
 <a href="http://fond.predanie.ru/?banner=1" target="_blank"><img src="https://ekzeget.ru/IMG/partners/banner_predanie-200x100-01.gif"></a><br /><br />
 <a href="http://www.bogoslov.ru" target="_blank"><IMG src="https://ekzeget.ru/IMG/partners/banner_bogoslov_293x79.gif" WIDTH=200 BORDER=0 ALT="Богослов.ру"></a><br /><br />
 <!-- banner Elitcy was add 26.07.17 -->
 <a href="https://dialog.elitsy.ru/"><img src="https://s3-eu-west-1.amazonaws.com/elitsy/static/b/questions_elitsy_200x90.png" border="0" alt="православная социальная сеть «Елицы»" width="200" height="90" /></a><br />
 </div><br />
-<div class="box"> 
-</div><div align="center">
+<div align="center">
 
 <a href="http://orphus.ru" id="orphus" target="_blank"><img alt="Система Orphus" src="<?=$base_url?>/assets/IMG/orphus.gif" border="0" width="125" height="115" /></a>
 </div>
@@ -246,11 +227,11 @@ VK.Widgets.Like("vk_like", {type: "mini"});
 <footer class="footer_pano">
 <!--noindex-->
 <div id="message">
-<a id="toTop" href="#"><img src="<?=$assets?>/IMG/vverh.png" /></a></div>
+<a id="toTop" href="#"><img src="<?=$base_url?>/assets/IMG/vverh.png" /></a></div>
 <div class="container">
         <div class="footer-menu">
             <div class="row">
-                <div class="col-md-3"><a href="/.."><img src="<?=$assets?>/IMG/logo.png" class="logo-bottom" title="Экзегет. Библия и толкования"></a></div>
+                <div class="col-md-3"><a href="/.."><img src="<?=$base_url?>/assets/IMG/logo.png" class="logo-bottom" title="Экзегет. Библия и толкования"></a></div>
                 <div class="col-md-6">
                     <a href="<?=$base_url?>/pravila"> Правила</a> |
                     <a href="<?=$base_url?>/new_tolk">Обновления</a> |

@@ -11,6 +11,7 @@ use Silex\ControllerCollection;
 class SermonController extends Controller
 {
     protected $layout = 'sermon';
+    
 
     protected function defineActions(ControllerCollection $sermon)
     {

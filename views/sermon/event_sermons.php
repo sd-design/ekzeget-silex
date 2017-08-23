@@ -17,10 +17,10 @@ use services\URLS;
 <ul class="bible-poem-text">
 <li ng-repeat="item in myData.pointers"><span>
                 </span><a href="{{item.PointerFrom}}"><span>{{item.PointerFrom}} - {{item.PointerTo}}</span></a>
-
+</li>
 </ul>
             <ol class="bible-poem-text">
-<li ng-repeat="item in myData.sermons"><sup></sup><span><a href="/sermon/{{item.id}}/author/{{item.author_slug}}/"><span>{{item.author_name}}</span> <span>&#171;{{item.topic}}&#187;</span></a>
-
-</ul>
+<li ng-repeat="item in myData.sermons">
+<sup></sup><span><a href="/sermon/{{item.id}}/author/{{item.author_slug}}/"><span>{{item.author_name}}</span> <span>&#171;{{item.topic}}&#187;</span></a></li>
+</ol>
 </div>

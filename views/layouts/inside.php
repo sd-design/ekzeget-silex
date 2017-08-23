@@ -103,13 +103,13 @@ VK.Widgets.Like("vk_like", {type: "mini"});
                     <div class="col-md-6">
                         <div class="rss">
                         <a href="https://vk.com/ekzeget" target="_blank" title="Мы ВКонтакте">
-                        <img style="margin: 0 5px 0 0" src="/IMG/vk.png" /></a> 
+                        <img style="margin: 0 5px 0 0" src="<?=$assets?>/IMG/vk.png" /></a> 
                         <a href="https://www.facebook.com/groups/ekzeget/" target="_blank" title="Мы на Facebook'e">
-                        <img style="margin: 0 5px 0 0" src="/IMG/f.png" /></a> 
+                        <img style="margin: 0 5px 0 0" src="<?=$assets?>/IMG/f.png" /></a> 
                         <a href="https://twitter.com/EkzegetRU" target="_blank" title="Мы в твиттере">
-                        <img style="margin: 0 5px 0 0" src="/IMG/tvit.png" /></a>
+                        <img style="margin: 0 5px 0 0" src="<?=$assets?>/IMG/tvit.png" /></a>
                         <a href="https://www.youtube.com/channel/UCymsjx24eU3kRFUjeBsh47A" target="_blank" title="Наш канал на YouTube">
-                        <img style="margin: 0 5px 0 0" src="/IMG/youtube.png"></a>
+                        <img style="margin: 0 5px 0 0" src="<?=$assets?>/IMG/youtube.png"></a>
                         </div>
                     </div>
                     <div class="col-md-12">

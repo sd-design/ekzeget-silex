@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ErrorController extends Controller
 {
-    protected $layout = 'bible';
+    protected $layout = 'empty';
     protected $templateNameSpace = 'error';
 
     public static function error(\Throwable $e, Request $request = null, $code = null)

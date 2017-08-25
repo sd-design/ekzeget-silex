@@ -33,6 +33,8 @@ class URLS implements ServiceProviderInterface
         'ADMIN_COMMENTARY_BOOK_EDIT'     =>  '/commentary/book/{id}/',
         'ADMIN_TABLE'                    =>  '/{table}/',
         'ADMIN_GALLERY'                    =>  '/gallery/',
+        'DEMO'                          => '/{demos}/{demos1}/',
+        'CALENDAR'                      => '/{cadate}/',
     ];
 
 

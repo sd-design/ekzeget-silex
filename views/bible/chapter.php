@@ -73,6 +73,7 @@ if (empty($name_user)) $name_user=$_SESSION['name_user'] ?? null;
                         'url' => URLS::ALL['BIBLE_BOOK_CHAPTER']
                     ])?>
             <div id="osn_text">
+            <div class="loading"></div>
             <ul class="bible-poem-text">
                 <!-- Angular text -->
                 <li class="fulltext" ng-repeat="item in myData.verses"><span class="js-popover-poem-bookmark-add"><sup>{{item.VerseNumber}}</sup>
@@ -101,10 +102,12 @@ if (empty($name_user)) $name_user=$_SESSION['name_user'] ?? null;
         <div class="col-md-3">
         
          <?= Commentaries::widget(['fromVersePointer' => $verses->getFirst()->getPointer(), 'toVersePointer' => $verses->getLast()->getPointer(), 'bookCode' => $bookCode, 'chapterNum' => $chapterNum]); ?>
-         <?= Commentaries::widget([
+
+         <?//Отключил этот виджет, потому что он дублирует предыдущий блок 
+         /* = Commentaries::widget([
              'fromVersePointer' => $verses->getFirst()->getPointer(), 'toVersePointer' => $verses->getLast()->getPointer(), 'bookCode' => $bookCode, 'chapterNum' => $chapterNum, 'mode' => Commentaries::MODE_RESEARCH
              ]);
-         ?>
+         */?>
 
     <?= ParallelVerses::widget(['fromVersePointer' => $verses->getFirst()->getPointer(), 'toVersePointer' => $verses->getLast()->getPointer()]) ?>
 

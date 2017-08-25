@@ -16,9 +16,7 @@ class PageController extends Controller
 
             $page = PageQuery::create()
                 ->findOneByCode($code);
-            if (!$page) {
-                    $app->abort(404, $app['translator']->trans('not_found'));
-            }
+           
 
             return $this->render('page',
                 [

@@ -29,30 +29,31 @@ use widgets\VersionChooser;
 -->
 <?php
 $this->setTitle($book->getName()); ?>
+<td>
+    <div style="width:610px;">
+        <table height="39" width="564" align="center" cellpadding="0" cellspacing="0" border="0">
+            <tr>
 
-<div class="row" id="chapter_menu">
-       
-    <div class="col-md-6">
-            <div id="spis_per">
+                <td style="width:200px">
                     <?= VersionChooser::widget(['response' => $response, 'request' => $request]) ?>
-            </div>
-    </div>
-    <div class="col-md-6 text-right">
-    
-        <?php
-        // TODO generate link and add to favourite for selected verses
-        ?>
-        <div class='ssil_uvelich'><a style="font-family: Arial; text-decoration: none; font-weight: 900;font-size: 22px" href="javascript:decreaseFontSize(<?php echo $size;?>);" title="Уменьшить размер шрифта">A-</a>
-            <a style="font-family: Arial; text-decoration: none; font-weight: 900;font-size: 22px" href="javascript:increaseFontSize(<?php echo $size;?>);" title="Увеличить размер шрифта">A+</a>
-        </div>
-        <div id='icon'>
-            <a hraf="#" ng-click="checkRead($event)"><img src="<?=$assets?>/img/markup.png" title="Изменить расположение текста" /></a>
-            <a href="javascript: popupURL = 'http://www.codex-sinaiticus.net/ru/manuscript.aspx?book=<?php echo $verses->getFirst()->getBook()->getManuscriptId().'&chapter='.$chapterNum;?>&lid=ru&side=r&zoomSlider=0'; ShowPopup(); "><img src="<?=$assets?>/img/svitok.png" title="Исследовать манускрипт" /></a>
-            <a href="glava_stolb.php?kn=<?php echo $bookCode.'&chapterNum='.$chapterNum;?>" title="Все переводы столбцами"><img src="<?=$assets?>/img//columns.png" /></a><a href="#"><img src="<?=$assets?>/img/favorite.png" /></a>
-        </div>
-    </div>
+                </td>
 
-</div>
+                <td width="200" height="39" align="center">
+                </td>
+                <td style="width:200px">
+                    <div class="ssil_uvelich" style="float: left; margin: 5px 0 0 0;"><a
+                                style="font-family: Arial; text-decoration: none; font-weight: 900;font-size: 22px"
+                                onclick="SendRequestssil_umensh();"
+                                href="javascript:decreaseFontSize(<?php //echo $size;?>);"
+                                title="Уменьшить размер шрифта">A-</a>
+                        <a style="font-family: Arial; text-decoration: none; font-weight: 900;font-size: 22px"
+                           onclick="SendRequestssil_uvelich();"
+                           href="javascript:increaseFontSize(<?php //echo $size;?>);"
+                           title="Увеличить размер шрифта">A+</a></div>
+
+                </td>
+            </tr>
+        </table>
 
 
         <br/>
@@ -103,16 +104,17 @@ $this->setTitle($book->getName()); ?>
 
     </div>
 </td>
-
-
-            <!--правый блок -->
-            <div class="col-md-3">
-        
-            <?= BookCommentariesList::widget(['book' => $book]) ?>
-
-    <br />
+<td style="width:200px">
+    <div class="box">
+        <?= BookCommentariesList::widget(['book' => $book]) ?>
+        <br/>
+    </div>
+    <br/>
     <div align="center">
-<a href="http://orphus.ru" id="orphus" target="_blank"><img alt="Система Orphus" src="<?=$base_url?>/assets/IMG/orphus.gif" border="0" width="125" height="115" /></a>
-</div>
-        </div>
-        <!-- END правый блок -->
+
+        <a href="http://orphus.ru" id="orphus" target="_blank"><img alt="Система Orphus" src="<?=$base_url?>/assets/IMG/orphus.gif" border="0"
+                                                                    width="125" height="115"/></a>
+    </div>
+    <br/>
+</td>
+</tr>

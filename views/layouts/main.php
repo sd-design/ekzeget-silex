@@ -14,7 +14,7 @@ use widgets\RegistrationInvitation;
 use widgets\RegularVisitor;
 
 ?>
-<!DOCTYPE html><html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="keywords" content="Библия Онлайн, толкование Священного Писания, переводы Библии, планы чтения Библии, Евангелие, аудиобиблия, слушать Библию, Библейские карты" />
+<!DOCTYPE html><html lang="ru" ng-app="bible"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="keywords" content="Библия Онлайн, толкование Священного Писания, переводы Библии, планы чтения Библии, Евангелие, аудиобиблия, слушать Библию, Библейские карты" />
 <meta name="description" content="Библия от «А» до «Я»: тексты Священного Писания в оригинале, и в различных переводах, толкования Отцов Церкви и современных богословов, исторические комментарии и справочники, интерактивные путешествия во времени и пространстве, аудиокниги и лекции. Ekzeget.ru - ваш проводник в мир Библии" /><meta property="og:image" content="<?=$assets?>/IMG/soc_kniga.png" />
 <link rel="image_src" href="/IMG/soc_kniga.png" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga.png" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga60x60.png" size="60x60" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga76x76.png" size="76x76" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga120x120.png" size="120x120" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga152x152.png" size="152x152" />
 <title><?=$this->getTitle()?></title>
@@ -26,6 +26,8 @@ use widgets\RegularVisitor;
     $this->assets();
     ?>
 <!--noindex-->
+<script type="text/javascript" src="<?=$assets?>/js/angular.min.js"></script>
+<script type="text/javascript" src="<?=$assets?>/js/app_calendar.js">
 <!-- Скрипты кнопок соцсетей -->
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?105"></script>
 <script  type="text/javascript">
@@ -48,10 +50,10 @@ VK.Widgets.Like("vk_like", {type: "mini"});
 
             <div class="navbar-header">
                 <ul class="nav navbar-nav">
-                    <li><a href="<?=$base_url?>/o_proekte"><div class="tehnav" style="padding-left:0"> О проекте</div></a></li>
-                    <li><a href="<?=$base_url?>/new_tolk"><div class="tehnav"> Обновления </div></a></li>
-                    <li><a href="<?=$base_url?>/generator"><div class="tehnav">Генератор ссылок</div></a></li>
-                    <li><a href="<?=$base_url?>/zap"><div class="tehnav"> Гостевая </div></a></li>
+                    <li><a href="<?=$base_url?>/o_proekte/"><div class="tehnav" style="padding-left:0"> О проекте</div></a></li>
+                    <li><a href="<?=$base_url?>/new_tolk/"><div class="tehnav"> Обновления </div></a></li>
+                    <li><a href="<?=$base_url?>/generator/"><div class="tehnav">Генератор ссылок</div></a></li>
+                    <li><a href="<?=$base_url?>/zap/"><div class="tehnav"> Гостевая </div></a></li>
                 </ul>
             
         </div>
@@ -73,26 +75,17 @@ VK.Widgets.Like("vk_like", {type: "mini"});
     <div class="row">
         <div class="col-md-4"><!-- Календарь -->
       <!--noindex-->
-<div class="calendar_inside">
-    <div id ="chten">
-                <div id="response">
-                            <div class="p_content3">
-                                <div id="page_content3" class="scroll-pane1">
-                                    <!-- ajax block -->
-                                    <?= Reading::widget()?>
-                                    <div style="text-align: center"><span style=" font-size: 13px;">Четверг 10-й седмицы по Пятидесятнице</span></div><div style="text-align: center"><span style=" font-size: 13px;">Смоленской иконы Божией Матери «Одигитрия» (Путеводительница)</span>
-                                    </div>
-                                    <div style="text-align: center">
-                                        <span style="font-size: 13px;">Святителя Питирима Тамбовского</span></div><hr style="width:100%;"><span style=" font-size: 13px;"><b>Утреня:</b> <span style="color:#666"><a href="glava.php?kn_rus=Лк&amp;gl=1&amp;marker_st=39-49, 56&amp;tolk=&amp;data_today=10.08.2017#39">Лк. 1:39-49, 56</a></span>
-                                        <br><b>Литургия:</b> Ап.: <span style="color:#666"><a href="glava.php?kn_rus=2 Кор&amp;gl=1&amp;marker_st=1–7&amp;tolk=&amp;data_today=10.08.2017#1">2 Кор. 1:1–7</a> Богородицы: <a href="glava.php?kn_rus=Флп&amp;gl=2&amp;marker_st=5-11&amp;tolk=&amp;data_today=10.08.2017#5">Флп. 2:5-11</a> или Свт.: <a href="glava.php?kn_rus=Евр&amp;gl=13&amp;marker_st=17-21&amp;tolk=&amp;data_today=10.08.2017#17">Евр. 13:17-21</a>,</span> Ев.: <span style="color:#666"><a href="glava.php?kn_rus=Мф&amp;gl=21&amp;marker_st=43–46&amp;tolk=&amp;data_today=10.08.2017#43">Мф. 21:43–46</a> Богородицы: <a href="glava.php?kn_rus=Лк&amp;gl=10&amp;marker_st=38-42&amp;tolk=&amp;data_today=10.08.2017#38">Лк. 10:38-42</a>, <a href="glava.php?kn_rus=Лк&amp;gl=11&amp;marker_st=27-28&amp;tolk=&amp;data_today=10.08.2017#27">Лк. 11:27-28</a> или Свт.: <a href="glava.php?kn_rus=Лк&amp;gl=6&amp;marker_st=17-23&amp;tolk=&amp;data_today=10.08.2017#17">Лк. 6:17-23</a></span><br></span>
-                                    <!-- end ajax block -->
+            <div class="calendar_inside">
+                    <div id ="chten">
+                            <div id="response">
+                    
+                            <?= \widgets\Reading::widget()?>
+                            <?= \widgets\Calendula::widget()?>
+                    
+                                                           
                             </div>
                     </div>
-                    <div id="zavtr_chten"><input id="dat_send" type="hidden"><a onclick="$('#dat_send').attr('value', '27.07.2017'); SendRequest();" rel="nofollow" title="Предыдущий день">&#8592; Пред.</a> <span style="color: #c4c4c4;">|</span> <a style="color: #c4c4c4; cursor: text;text-decoration: none;">Сегодня</a> <span style="color: #c4c4c4;">|</span> <a onclick="$('#dat_send').attr('value', '29.07.2017');SendRequest();" rel="nofollow" title="Следующий день">След. &#8594;</a>
-                    </div>
-                </div>
-    </div>
-</div>
+            </div>
 <!--/noindex-->  
         </div>
         <div class="col-md-8">
@@ -243,89 +236,4 @@ VK.Widgets.Like("vk_like", {type: "mini"});
 </div>
 </section>
 
-<footer class="footer_pano">
-<!--noindex-->
-<div id="message">
-<a id="toTop" href="#"><img src="<?=$assets?>/IMG/vverh.png" /></a></div>
-<div class="container">
-        <div class="footer-menu">
-            <div class="row">
-                <div class="col-md-3"><a href="/.."><img src="<?=$assets?>/IMG/logo.png" class="logo-bottom" title="Экзегет. Библия и толкования"></a></div>
-                <div class="col-md-6">
-                    <a href="<?=$base_url?>/pravila"> Правила</a> |
-                    <a href="<?=$base_url?>/new_tolk">Обновления</a> |
-                    <a href="<?=$base_url?>/generator"> Генератор ссылок</a> |
-                    <a href="<?=$base_url?>/search"> Поиск</a> |
-                    <a href="<?=$base_url?>/zap"> Гостевая</a> <br />
-                    <a href="<?=$base_url?>/propovedi">Проповеди</a> |
-                    <a href="<?=$base_url?>/slovari">Словари</a> |
-                    <a href="<?=$base_url?>/maps"> Карты</a> |
-                    <a href="<?=$base_url?>/tolks_allp"> Экзегеты</a> |
-                    <a href="<?=$base_url?>/lektorij"> Лекторий</a> | <a href="https://pda.ekzeget.ru/">Мобильная версия</a>
-                    </div>
-                    <div class="col-md-3 text-right">
-                        <a href="<?=$base_url?>/donation" class="btn btn-lg btn-donation">Пожертвовать</a>     
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="banners-bottom">
-            <a href="http://www.bogoslov.ru" target="_blank"><img src="https://ekzeget.ru/IMG/partners/banner_88x31.png" height=31 width=88 BORDER=0 alt="Богослов.ру"></a> &nbsp; 
-                <a href="https://fond.predanie.ru/?banner=1" target="_blank"><img src="https://ekzeget.ru/IMG/partners/banner_predanie-88x31_0.gif"></a> &nbsp; 
-                <a href='http://www.barysh-eparhia.ru/' target="_blank"><img src='https://ekzeget.ru/IMG/partners/banner_mini.png' width=88 height=34 title="Барышская епархия" alt='Барышская епархия'></a> &nbsp; 
-                <a href="http://www.андреевский-храм.рф/" target="_blank"><img
-                src="https://ekzeget.ru/IMG/partners/Banner.png"
-                title="Храм апостола Андрея Первозванного" width=88 height=31 border=0></a> &nbsp; 
-                <!--begin of www.hristianstvo.ru
-                <a href="https://www.hristianstvo.ru/?from=13606" target="_blank"><img
-                src="https://www.hristianstvo.ru/images/ru-88x31-lightgray1.gif"
-                title="Православное христианство.ru" width=88 height=31 border=0></a> &nbsp; 
-                end of www.hristianstvo.ru-->
-
-                <!-- Yandex.Metrika informer --> &nbsp; 
-                <a href="https://metrika.yandex.ru/stat/?id=23728522&amp;from=informer"
-                target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/23728522/2_1_FFFFFFFF_EFEFEFFF_0_pageviews"
-                style="width:80px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры)" onclick="try{Ya.Metrika.informer({i:this,id:23728522,lang:'ru'});return false}catch(e){}" /></a> &nbsp; 
-                <!-- /Yandex.Metrika informer -->
-                <noscript><div><img src="https://mc.yandex.ru/watch/23728522" style="position:absolute; left:-9999px;" alt="" /></div></noscript> 
-                <!-- /Yandex.Metrika counter -->
-
-                <noscript><div style="position:absolute;left:-10000px;">
-                <img src="//top-fwz1.mail.ru/counter?id=2566972;js=na" style="border:0;" height="1" width="1" alt="Рейтинг@Mail.ru" />
-                </div></noscript> 
-                <!-- //Rating@Mail.ru counter -->
-                <!-- Rating@Mail.ru logo -->
-                <a href="https://top.mail.ru/jump?from=2566972">
-                <img src="//top-fwz1.mail.ru/counter?id=2566972;t=361;l=1" 
-                style="border:0;" height="18" width="88" alt="Рейтинг@Mail.ru" /></a>
-                <!-- //Rating@Mail.ru logo --> 
-        </div>
-            <div class="founder text-right"><b>&copy; С. Жидков, 2011 - 2017 гг.</b></div>
-<!--/noindex-->
-        </div>
-</footer>
-<script type="text/javascript" src="<?=$assets?>/js/jquery.min.js"></script>
-<script type="text/javascript" src="<?=$assets?>/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<?=$assets?>/orphus/orphus.js"></script>
-<script defer type="text/javascript" src="<?=$assets?>/js/head_scripts.js"></script><!-- все скрипты в одном -->
-<!-- Rating@Mail.ru counter -->
-<script defer type="text/javascript" src="<?=$assets?>/js/Rating.Mail.js"></script> 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $("#myTab a").click(function(e){
-    e.preventDefault();
-    $(this).tab('show');
-  });
-});
-</script> 
-<script> 
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ 
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), 
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) 
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); 
-
-ga('create', 'UA-86114429-1', 'auto'); 
-ga('send', 'pageview'); 
-
-</script> 
-</body></html>
+<?= \widgets\Footer::widget()?>

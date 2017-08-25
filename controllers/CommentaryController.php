@@ -18,8 +18,15 @@ use Symfony\Component\HttpFoundation\Request;
 class CommentaryController extends Controller
 {
 
+    protected $layout = 'commentary';
+
     protected function defineActions(ControllerCollection $commentary)
     {
+        
+        $commentary->get('/', function (\Application $app) {
+            return $this->render('index');
+        });
+
         $commentary->get(URLS::ALL['COMMENTARY_BOOK'], function (\Application $app, Book $book, $authorSlug) {
             $author = AuthorQuery::create()->useI18nQuery($app['current_locale'])->findOneBySlug($authorSlug);
             $commentary = BookCommentaryQuery::create()->filterByAuthorId($author->getId())->findOneByBookNumber($book->getNumber());

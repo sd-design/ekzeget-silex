@@ -6,11 +6,10 @@
  * @var \Propel\Runtime\Collection\Collection|\models\Tradition[] $commentaries
  */
 use services\URLS;
-use widgets\News;
 
 ?>
 
-<td><div style="width:610px;">
+<div>
         <p><?= $app['t']('total_commentaries')?>: <b> <?= $commentaries->count() ?> </b></p>
 
             <br />
@@ -36,10 +35,3 @@ use widgets\News;
             </p>
         <?php endforeach;?>
     </div>
-</td>
-<td>
-    <div class="box">
-        <?= News::widget() ?>
-    </div>
-</td>
-<tr>

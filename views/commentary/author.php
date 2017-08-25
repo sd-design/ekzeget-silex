@@ -12,27 +12,14 @@ $this->setTitle($author->getName());
 ?>
 
 
-<td style="width:180px">
-
-</td>
-<td>
-    <div style="width:610px;">
-        <br/>
+    <div class="calendar_inside box2">
+        <?= AuthorInfo::widget(['author' => $author->getAuthor()]) ?>
+    </div>
 
         <p><?= $this->render('markup', ['txt' => $author->getDescription()]); ?></p>
         <br/><br/>
-    </div>
-</td>
-<td style="width:200px">
-    <div class="box">
-        <?= AuthorInfo::widget(['author' => $author->getAuthor()]) ?>
-    </div>
-    <br/>
-    <div align="center">
+ 
 
-        <a href="http://orphus.ru" id="orphus" target="_blank"><img alt="Система Orphus" src="IMG/orphus.gif" border="0"
-                                                                    width="125" height="115"/></a>
-    </div>
-    <br/>
-</td>
-</tr>
+   
+
+ 

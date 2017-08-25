@@ -12,7 +12,7 @@
         border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); padding: 15px;
         color: #311B0F; background: #FBFAE6;">
-        <img src="<?=$assets?>/img/closed-red.png" id="closed-red"/>
+        <img src="<?=$assets?>/IMG/closed-red.png" id="closed-red"/>
     <?=$text?>
     <?php if(isset($details)):?>
         <div id="open" style="text-align:center">

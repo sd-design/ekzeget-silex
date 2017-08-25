@@ -9,8 +9,8 @@ use services\URLS;
 use widgets\News;
 
 ?>
-<td>
-    <div style="width:610px;">
+
+    <div>
         <br/>
         <span style='color: #797979; margin-left: 15px; font-weight: 900;'>
         <?= $app['t']('all_exegets') ?>
@@ -33,10 +33,3 @@ use widgets\News;
             <?php endforeach; ?>
         </ul>
     </div>
-</td>
-<td>
-    <div class="box">
-        <?= News::widget() ?>
-    </div>
-</td>
-<tr>

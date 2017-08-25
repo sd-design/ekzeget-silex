@@ -13,10 +13,10 @@ use services\URLS;
 ?>
 <div class="news-list">
 <hr class="ekz">
-                        <ul class="news">
+                        <ul class="ekzegets">
 <?php
 foreach($events as $event):?>
-<li> <h4><a style="font-size: 16px;" href="/sermon/<?= $event->getId()?>/"><?= $event->getName()?>
+<li> <h4><a href="/sermon/<?= $event->getId()?>/"><?= $event->getName()?>
 </a></h4>
 </li>
 <?php endforeach;

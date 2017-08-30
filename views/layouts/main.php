@@ -26,8 +26,6 @@ use widgets\RegularVisitor;
     $this->assets();
     ?>
 <!--noindex-->
-<script type="text/javascript" src="<?=$assets?>/js/angular.min.js"></script>
-<script type="text/javascript" src="<?=$assets?>/js/app_calendar.js">
 <!-- Скрипты кнопок соцсетей -->
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?105"></script>
 <script  type="text/javascript">
@@ -75,18 +73,10 @@ VK.Widgets.Like("vk_like", {type: "mini"});
     <div class="row">
         <div class="col-md-4"><!-- Календарь -->
       <!--noindex-->
-            <div class="calendar_inside">
-                    <div id ="chten">
-                            <div id="response">
-                    
-                            <?= \widgets\Reading::widget()?>
-                            <?= \widgets\Calendula::widget()?>
+            <?= \widgets\Calendula::widget()?>
                     
                                                            
-                            </div>
-                    </div>
-            </div>
-<!--/noindex-->  
+  <!--/noindex-->  
         </div>
         <div class="col-md-8">
                 <div class="row">

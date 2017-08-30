@@ -14,7 +14,7 @@ use widgets\RegistrationInvitation;
 use widgets\RegularVisitor;
 
 ?>
-<!DOCTYPE html><html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="keywords" content="Библия Онлайн, толкование Священного Писания, переводы Библии, планы чтения Библии, Евангелие, аудиобиблия, слушать Библию, Библейские карты" />
+<!DOCTYPE html><html lang="ru" ng-app="bible"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="keywords" content="Библия Онлайн, толкование Священного Писания, переводы Библии, планы чтения Библии, Евангелие, аудиобиблия, слушать Библию, Библейские карты" />
 <meta name="description" content="Библия от «А» до «Я»: тексты Священного Писания в оригинале, и в различных переводах, толкования Отцов Церкви и современных богословов, исторические комментарии и справочники, интерактивные путешествия во времени и пространстве, аудиокниги и лекции. Ekzeget.ru - ваш проводник в мир Библии" /><meta property="og:image" content="<?=$assets?>/IMG/soc_kniga.png" />
 <link rel="image_src" href="/IMG/soc_kniga.png" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga.png" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga60x60.png" size="60x60" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga76x76.png" size="76x76" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga120x120.png" size="120x120" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga152x152.png" size="152x152" />
 <title><?=$page_title?> | Ekzeget.ru - ваш проводник в мир Библии</title>
@@ -71,34 +71,12 @@ VK.Widgets.Like("vk_like", {type: "mini"});
 
 <div class="jumbotron">
     <div class="row">
-        <div class="col-md-4"><!-- Календарь -->
-      <!--noindex-->
-<div class="calendar_inside">
-    <div id ="chten">
-                <div id="response">
-                            <div class="icon-calendar"><a id="toggler" title="Перейти на любую дату чтения"><img src="<?=$assets?>/IMG/day.png"/ ></a>
-                            </div>
-                            <div id="answer" style="display: none;">Введите дату богослужебных чтений:<br /> <input type="date" id="data_today" maxlength="15" pattern="\d+.+" placeholder="гггг.мм.дд">     <button type="submit" onclick="SendRequestPOST();" name="submit" style="padding: 6px 8px 5px 8px;font-size: 11px;">OK</button>
-                            </div>
-                            <div id="chten_today">Сегодня <font color=#DF0404>28 июля</font></div>
-                            <div class="p_content3">
-                                <div id="page_content3" class="scroll-pane1">
-                                    <!-- ajax block -->
-                                    <div style="text-align: center"><span style=" font-size: 13px;">Четверг 10-й седмицы по Пятидесятнице</span></div><div style="text-align: center"><span style=" font-size: 13px;">Смоленской иконы Божией Матери «Одигитрия» (Путеводительница)</span>
-                                    </div>
-                                    <div style="text-align: center">
-                                        <span style="font-size: 13px;">Святителя Питирима Тамбовского</span></div><hr style="width:100%;"><span style=" font-size: 13px;"><b>Утреня:</b> <span style="color:#666"><a href="glava.php?kn_rus=Лк&amp;gl=1&amp;marker_st=39-49, 56&amp;tolk=&amp;data_today=10.08.2017#39">Лк. 1:39-49, 56</a></span>
-                                        <br><b>Литургия:</b> Ап.: <span style="color:#666"><a href="glava.php?kn_rus=2 Кор&amp;gl=1&amp;marker_st=1–7&amp;tolk=&amp;data_today=10.08.2017#1">2 Кор. 1:1–7</a> Богородицы: <a href="glava.php?kn_rus=Флп&amp;gl=2&amp;marker_st=5-11&amp;tolk=&amp;data_today=10.08.2017#5">Флп. 2:5-11</a> или Свт.: <a href="glava.php?kn_rus=Евр&amp;gl=13&amp;marker_st=17-21&amp;tolk=&amp;data_today=10.08.2017#17">Евр. 13:17-21</a>,</span> Ев.: <span style="color:#666"><a href="glava.php?kn_rus=Мф&amp;gl=21&amp;marker_st=43–46&amp;tolk=&amp;data_today=10.08.2017#43">Мф. 21:43–46</a> Богородицы: <a href="glava.php?kn_rus=Лк&amp;gl=10&amp;marker_st=38-42&amp;tolk=&amp;data_today=10.08.2017#38">Лк. 10:38-42</a>, <a href="glava.php?kn_rus=Лк&amp;gl=11&amp;marker_st=27-28&amp;tolk=&amp;data_today=10.08.2017#27">Лк. 11:27-28</a> или Свт.: <a href="glava.php?kn_rus=Лк&amp;gl=6&amp;marker_st=17-23&amp;tolk=&amp;data_today=10.08.2017#17">Лк. 6:17-23</a></span><br></span>
-                                    <!-- end ajax block -->
-                            </div>
-                    </div>
-                    <div id="zavtr_chten"><input id="dat_send" type="hidden"><a onclick="$('#dat_send').attr('value', '27.07.2017'); SendRequest();" rel="nofollow" title="Предыдущий день">&#8592; Пред.</a> <span style="color: #c4c4c4;">|</span> <a style="color: #c4c4c4; cursor: text;text-decoration: none;">Сегодня</a> <span style="color: #c4c4c4;">|</span> <a onclick="$('#dat_send').attr('value', '29.07.2017');SendRequest();" rel="nofollow" title="Следующий день">След. &#8594;</a>
-                    </div>
-                </div>
-    </div>
-</div>
+    <div class="col-md-4"><!-- Календарь -->
+    <!--noindex-->
+<?= \widgets\Calendula::widget()?>
+
 <!--/noindex-->  
-        </div>
+    </div>
         <div class="col-md-8">
                 <div class="row">
                     <div class="col-md-6"><a href = "/.."><img src="<?=$assets?>/IMG/logo.png" style="height:70px; margin-left: 45px; margin-top: 2px" title="Экзегет. Библия и толкования" /></a></div>

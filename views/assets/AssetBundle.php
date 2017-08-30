@@ -9,7 +9,7 @@ abstract class AssetBundle
     protected static $assets = [], $depends = [];
     private static $inclTags = [
         'css' => '<link type="text/css" rel="stylesheet" href="%s" />',
-        'js' => '<script defer src="%s"></script>',
+        'js' => '<script type="text/javascript" src="%s"></script>',
     ];
 
     public static function register(ViewServiceProvider $view)

@@ -13,6 +13,7 @@ class URLS implements ServiceProviderInterface
 {
     const ALL = [
         'PAGE'                           =>  '/{code}/',
+        'CATEGORY'                       =>  '/{slug}/',
         'BIBLE_BOOK'                     =>  '/{book}/',
         'BIBLE_BOOK_CHAPTER'             =>  '/{book}/{chapterNum}/',
         'BIBLE_BOOK_CHAPTER_VERSE'       =>  '/{book}/{chapterNum}/{verse}/',
@@ -22,6 +23,8 @@ class URLS implements ServiceProviderInterface
         'COMMENTARY_AUTHOR'              =>  '/author/{slug}/',
         'COMMENTARY_AUTHOR_ALL'          =>  '/author/{slug}/all/',
         'COMMENTARY_AUTHORS'             =>  '/authors/',
+        'LEKTORIJ'                       =>  '/{code}/',
+        'LEKTORIJ_LIST'                  =>  '/list/{id}/',
         'SEARCH_SUGGEST'                 =>  '/suggest/{query}/',
         'SEARCH'                         =>  '/{query}/',
 
@@ -32,7 +35,7 @@ class URLS implements ServiceProviderInterface
         'ADMIN_AUTHOR_EDIT'              =>  '/author/{id}/',
         'ADMIN_COMMENTARY_BOOK_EDIT'     =>  '/commentary/book/{id}/',
         'ADMIN_TABLE'                    =>  '/{table}/',
-        'ADMIN_GALLERY'                    =>  '/gallery/',
+        'ADMIN_GALLERY'                  =>  '/gallery/',
         'DEMO'                          => '/{demos}/{demos1}/',
         'CALENDAR'                      => '/{cadate}/',
     ];

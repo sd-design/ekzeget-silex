@@ -44,31 +44,7 @@ VK.Widgets.Like("vk_like", {type: "mini"});
 <body>
 <section id="head">
     <div class="container">
-        <nav class="navbar navbar-default">
-
-            <div class="navbar-header">
-                <ul class="nav navbar-nav">
-                    <li><a href="<?=$base_url?>/o_proekte/"><div class="tehnav" style="padding-left:0"> О проекте</div></a></li>
-                    <li><a href="<?=$base_url?>/new_tolk/"><div class="tehnav"> Обновления </div></a></li>
-                    <li><a href="<?=$base_url?>/generator/"><div class="tehnav">Генератор ссылок</div></a></li>
-                    <li><a href="<?=$base_url?>/zap/"><div class="tehnav"> Гостевая </div></a></li>
-                </ul>
-            
-        </div>
- <div class="navbar-right">
-              <div class="nav_verh">
-              <?php
-              if (!$app['session']->get('loggedin')) { ?>
-                  Здравствуйте, <b>Гость</b> | <a href="<?=$base_url?>/auth/">Вход</a> | <a href="<?=$base_url?>/registration/">Регистрация</a>
-              <? }
-              echo RegularVisitor::widget(['top' => 240]);
-              echo RegistrationInvitation::widget();
-              ?>
-        </div>
-        </div>
-
-</nav>
-
+    <?= \widgets\Navmenu::widget()?>
 <div class="jumbotron">
     <div class="row">
         <div class="col-md-4"><!-- Календарь -->

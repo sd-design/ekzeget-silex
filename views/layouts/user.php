@@ -14,7 +14,7 @@ use widgets\RegistrationInvitation;
 use widgets\RegularVisitor;
 
 ?>
-<!DOCTYPE html><html lang="ru"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="keywords" content="Библия Онлайн, толкование Священного Писания, переводы Библии, планы чтения Библии, Евангелие, аудиобиблия, слушать Библию, Библейские карты" />
+<!DOCTYPE html><html lang="ru" ng-app="bible"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="keywords" content="Библия Онлайн, толкование Священного Писания, переводы Библии, планы чтения Библии, Евангелие, аудиобиблия, слушать Библию, Библейские карты" />
 <meta name="description" content="Библия от «А» до «Я»: тексты Священного Писания в оригинале, и в различных переводах, толкования Отцов Церкви и современных богословов, исторические комментарии и справочники, интерактивные путешествия во времени и пространстве, аудиокниги и лекции. Ekzeget.ru - ваш проводник в мир Библии" /><meta property="og:image" content="<?=$assets?>/IMG/soc_kniga.png" />
 <link rel="image_src" href="/IMG/soc_kniga.png" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga.png" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga60x60.png" size="60x60" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga76x76.png" size="76x76" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga120x120.png" size="120x120" /><link rel="apple-touch-icon" href="<?=$assets?>/IMG/soc_kniga152x152.png" size="152x152" />
 <title><?=$page_title?> | Ekzeget.ru - ваш проводник в мир Библии</title>
@@ -44,30 +44,7 @@ VK.Widgets.Like("vk_like", {type: "mini"});
 <body>
 <section id="head">
     <div class="container">
-        <nav class="navbar navbar-default">
-
-            <div class="navbar-header">
-                <ul class="nav navbar-nav">
-                    <li><a href="<?=$base_url?>/o_proekte"><div class="tehnav" style="padding-left:0"> О проекте</div></a></li>
-                    <li><a href="<?=$base_url?>/new_tolk"><div class="tehnav"> Обновления </div></a></li>
-                    <li><a href="<?=$base_url?>/generator"><div class="tehnav">Генератор ссылок</div></a></li>
-                    <li><a href="<?=$base_url?>/zap"><div class="tehnav"> Гостевая </div></a></li>
-                </ul>
-            
-        </div>
- <div class="navbar-right">
-              <div class="nav_verh">
-              <?php
-              if (!$app['session']->get('loggedin')) {
-                  echo 'Здравствуйте, <b>Гость</b> | <a href="'.$base_url.'/auth">Вход</a> | <a href="'.$base_url.'/registration">Регистрация</a>';
-              }
-              echo RegularVisitor::widget(['top' => 240]);
-              echo RegistrationInvitation::widget();
-              ?>
-        </div>
-        </div>
-
-</nav>
+    <?= \widgets\Navmenu::widget()?>
 
 <div class="jumbotron">
     <div class="row">

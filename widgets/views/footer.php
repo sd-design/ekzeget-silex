@@ -31,11 +31,11 @@ use widgets\Footer;
         </div>
         <hr>
         <div class="banners-bottom">
-            <a href="http://www.bogoslov.ru" target="_blank"><img src="https://ekzeget.ru/IMG/partners/banner_88x31.png" height=31 width=88 BORDER=0 alt="Богослов.ру"></a> &nbsp; 
-                <a href="https://fond.predanie.ru/?banner=1" target="_blank"><img src="https://ekzeget.ru/IMG/partners/banner_predanie-88x31_0.gif"></a> &nbsp; 
-                <a href='http://www.barysh-eparhia.ru/' target="_blank"><img src='https://ekzeget.ru/IMG/partners/banner_mini.png' width=88 height=34 title="Барышская епархия" alt='Барышская епархия'></a> &nbsp; 
+            <a href="http://www.bogoslov.ru" target="_blank"><img src="<?=$assets?>/IMG/partners/banner_88x31.png" height=31 width=88 BORDER=0 alt="Богослов.ру"></a> &nbsp; 
+                <a href="https://fond.predanie.ru/?banner=1" target="_blank"><img src="<?=$assets?>/IMG/partners/banner_predanie-88x31_0.gif"></a> &nbsp; 
+                <a href='http://www.barysh-eparhia.ru/' target="_blank"><img src='<?=$assets?>/IMG/partners/banner_mini.png' width=88 height=34 title="Барышская епархия" alt='Барышская епархия'></a> &nbsp; 
                 <a href="http://www.андреевский-храм.рф/" target="_blank"><img
-                src="https://ekzeget.ru/IMG/partners/Banner.png"
+                src="<?=$assets?>/IMG/partners/Banner.png"
                 title="Храм апостола Андрея Первозванного" width=88 height=31 border=0></a> &nbsp; 
                 <!--begin of www.hristianstvo.ru
                 <a href="https://www.hristianstvo.ru/?from=13606" target="_blank"><img

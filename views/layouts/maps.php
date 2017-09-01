@@ -103,32 +103,86 @@ VK.Widgets.Like("vk_like", {type: "mini"});
     <div class="row">
         <!--левый блок -->
         <div class="col-sm-3">
-        <!-- НАЧАЛО МЕНЮ -->
-     <!-- МЕНЮ -->
-<br/>
-        <!-- BANNERs -->
-        <!--noindex-->
-        <div class="pano-banners calendar_inside text-center">
-                <br />
-                <a href="https://fond.predanie.ru/blago/340442/" class="btn btn-lg btn-danger btn-shadow">Помочь нашему проекту</a><br />
-                <br />
-                <a href="<?=$base_url?>/banners/" class="btn btn-lg btn-warning btn-shadow">Наши баннеры</a>
-                <div class="banners" align="center">
-                    <!-- Put this div tag to the place, where the Like block will be -->
-                    <div id="vk_like" style="width: 100px"></div>
-                    <br />
-                    <div id="fb-root" style="width: 100px"></div>
-                    <div class="fb-like" data-layout="box_count" data-action="like" data-show-faces="true" data-share="false" style="width: 100px"></div>
-                    <br /><br />
+             <!--noindex-->
+        <!-- НАЧАЛО МЕНЮ карт-->
+        <br/>
+        <div class="pano-banners calendar_inside box2 text-left">
+        <div class="maps-menu" id="maps-menu">    <a href="map.php?map=1">
+        <hr>
+            <span>1. Физическая карта святой земли</span>
+            </a><br>
+        
+            <a href="map.php?map=2">
+            <span>2. Исход Израиля из Египта и вхождение в Ханаан</span>
+            </a><br>
+        
+            <a href="map.php?map=3">
+            <span>3. Разделение на 12 колен</span>
+            </a><br>
+        
+            <a href="map.php?map=4">
+            <span>4. Империя Давида и Соломона</span>
+            </a><br>
 
-                    <div id="ok_shareWidget"></div>
-                </div>
+        
+            <a href="map.php?map=5">
+            <span>5. Ассирийская Империя</span>
+            </a><br>
+
+        
+            <a href="map.php?map=6">
+            <span>6. Ново-вавилонская империя</span> (Навуходоносор) <span>и царство Египетское</span>
+            </a><br>
+
+        
+            <a href="map.php?map=7">
+            <span>7. Персидская империя</span>
+            </a><br>
+
+        
+            <a href="map.php?map=8">
+            <span>8. Римская империя</span>
+            </a><br>
+
+        
+            <a href="map.php?map=9">
+            <span>9. Мир Ветхого Завета</span>
+            </a><br>
+
+        
+            <a href="map.php?map=10">
+            <span>10. Ханаан во времена Ветхого Завета</span>
+            </a><br>
+
+        
+            <a href="map.php?map=11">
+            <span>11. Святая земля во времена Нового Завета</span>
+            </a><br>
+
+        
+            <a href="map.php?map=12">
+            <span>12. Иерусалим во дни Иисуса</span>
+            </a><br>
+
+        
+            <a href="map.php?map=13">
+            <span>13. Миссионерские путешествия апостола Павла</span>
+            </a><br>
+
+        
+            <a href="map.php?map=14">
+            <span>14. Святая земля: карта высот в библейские времена</span>
+            </a><br><hr>
+</div>
         </div>
+   
+       
+       
         <!--/noindex-->
-        <!-- END BANNERs -->
+       
         </div>
         <!--центральный блок -->
-        <div class="col-sm-6 page-control">
+        <div class="col-md-9 page-control">
             <div class="page-content">
    
             <?=$contents?>
@@ -136,21 +190,8 @@ VK.Widgets.Like("vk_like", {type: "mini"});
                      
             </div>
         </div>
-        <!--правый блок -->
-        <div class="col-md-3">
-          <div class="calendar_inside box3 text-center">
-            <h4>Наши друзья:</h4>
-<a href="http://fond.predanie.ru/?banner=1" target="_blank"><img src="https://ekzeget.ru/IMG/partners/banner_predanie-200x100-01.gif"></a><br /><br />
-<a href="http://www.bogoslov.ru" target="_blank"><IMG src="https://ekzeget.ru/IMG/partners/banner_bogoslov_293x79.gif" WIDTH=200 BORDER=0 ALT="Богослов.ру"></a><br /><br />
-<!-- banner Elitcy was add 26.07.17 -->
-<a href="https://dialog.elitsy.ru/"><img src="https://s3-eu-west-1.amazonaws.com/elitsy/static/b/questions_elitsy_200x90.png" border="0" alt="православная социальная сеть «Елицы»" width="200" height="90" /></a><br />
-</div><br />
-<div align="center" class="box4 text-center">
-
-<a href="http://orphus.ru" id="orphus" target="_blank"><img alt="Система Orphus" src="<?=$base_url?>/assets/IMG/orphus.gif" border="0" width="125" height="115" /></a>
-<br/>
-</div>
-        </div>
+        <!--правый блок в картах убрали-->
+     
    
 </div>
 </section>

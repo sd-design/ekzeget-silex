@@ -52,7 +52,7 @@ class SermonController extends Controller
         });
 
         $sermon->get('/{event}/', function (\Application $app, $event) {
-            $app['page.title']= "Проповеди";
+            
             $sermons = SermonQuery::create()
                 ->select(['id', 'topic'])
                 ->filterByEventId($event)
@@ -63,7 +63,10 @@ class SermonController extends Controller
                     ->endUse()
                 ->endUse()
                 ->find();
-
+            $title =EventQuery::create()
+            ->useI18nQuery($app['current_locale'])
+            ->findOneById($event);
+                $app['page.title']= $title->getName();
             return $this->render('event_sermons', [
                 'sermons' => $sermons,
                 'pointers'  =>  EventBibleQuery::create()->findByEventId($event)
